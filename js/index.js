@@ -14,11 +14,11 @@
 
 // ✅ 6) Modificare il meeting day alla selezione di un giorno
 
-// 7) Salvare un appuntamento con l'ora e una stringa sempre per il giorno selezionato
+// ✅ 7) Salvare un appuntamento con l'ora e una stringa sempre per il giorno selezionato
 
-// 8) devo poter selezionare altri giorni, potendo inserire un appuntamento per loro, pur mantenendo la possibilità di RIVEDERE appuntamenti già creati su altri giorni
+// ✅ 8) devo poter selezionare altri giorni, potendo inserire un appuntamento per loro, pur mantenendo la possibilità di RIVEDERE appuntamenti già creati su altri giorni
 
-// extra 9) un giorno contenente un appuntamento dovrà riflettere questo stato con un pallino colorato dentro la cella
+//  extra 9) un giorno contenente un appuntamento dovrà riflettere questo stato con un pallino colorato dentro la cella
 
 // _____________________________________________________________________________________________________________________________
 
@@ -117,6 +117,14 @@ const saveMeeting = function (e) {
 
     meetingTime.value = "";
     meetingName.value = "";
+
+    // aggiungiamo 1 SOLA VOLTA il pallino nella cella che indicherà la presenza di appuntamenti
+    if (appointments[dayIndex].length === 1) {
+      const selectedCell = document.querySelector(".day.selected"); // selezioniamo il nodo della cella interessata
+      const dot = document.createElement("span"); // creo span
+      dot.classList.add("dot"); // aggiungo classe dot (precedentemente stilizzata in CSS)
+      selectedCell.appendChild(dot); // inserisco dot nella cella selezionata
+    }
 
     showAppointments(dayIndex); // abilitiamo la sezione appuntamenti passando l'indice del giorno di cui vogliamo visualizzare gli appuntamenti
   } else {

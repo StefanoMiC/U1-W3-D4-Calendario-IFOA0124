@@ -18,7 +18,7 @@
 
 // ✅ 8) devo poter selezionare altri giorni, potendo inserire un appuntamento per loro, pur mantenendo la possibilità di RIVEDERE appuntamenti già creati su altri giorni
 
-//  extra 9) un giorno contenente un appuntamento dovrà riflettere questo stato con un pallino colorato dentro la cella
+// ✅ extra 9) un giorno contenente un appuntamento dovrà riflettere questo stato con un pallino colorato dentro la cella
 
 // _____________________________________________________________________________________________________________________________
 
